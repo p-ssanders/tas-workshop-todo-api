@@ -20,5 +20,5 @@ The `mysql` branch uses an external MySQL instance either on localhost:<defaultp
     cf push -f manifest.yaml
 
 ##  References
--   https://docs.steeltoe.io/guides/get-to-know-steeltoe/exercise1.html?tabs=visual-studio
--   https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-7.0
+-   https://docs.steeltoe.io/guides/get-to-know-steeltoe/exercise1.html
+-   https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api

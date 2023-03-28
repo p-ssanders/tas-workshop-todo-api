@@ -2,4 +2,3 @@
 applications:
 - name: my-dotnet-api
   random-route: true
-  # path: ./bin/Release/net6.0/publish/
