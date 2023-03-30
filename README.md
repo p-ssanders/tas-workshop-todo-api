@@ -13,6 +13,7 @@ The `mysql` branch uses an external MySQL instance either on localhost:<defaultp
 
 ##  Run Locally
 
+    docker run --rm -ti -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=steeltoe -e MYSQL_DATABASE=steeltoe -e MYSQL_USER=steeltoe -e MYSQL_PASSWORD=steeltoe percona:5.7.35
     dotnet run
 
 ##  Run on Tanzu Application Service (Cloud Foundry)
