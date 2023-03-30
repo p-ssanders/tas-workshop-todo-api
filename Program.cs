@@ -7,24 +7,21 @@ using Steeltoe.Management.TaskCore;
 using TodoApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
 builder.AddAllActuators();
 builder.UseCloudHosting();
 builder.AddCloudFoundryConfiguration();
 
 var services = builder.Services;
+services.ConfigureCloudFoundryOptions(builder.Configuration);
 services.AddDbContext<TodoContext>(options => options.UseMySql(builder.Configuration));
 services.AddTask<MigrateDbContextTask<TodoContext>>(ServiceLifetime.Scoped);
-services.ConfigureCloudFoundryOptions(builder.Configuration);
 services.AddControllers();
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
 
 var app = builder.Build();
-
 app.UseSwagger();
 app.UseSwaggerUI();
 app.UseAuthorization();
 app.MapControllers();
-
 app.RunWithTasks();
